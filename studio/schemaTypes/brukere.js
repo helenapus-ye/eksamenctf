@@ -17,6 +17,11 @@ export default defineType({
         type: 'string',
       }),
       defineField({
+        name: 'admin',
+        title: 'Er personen admin',
+        type: 'boolean',
+      }),
+      defineField({ 
         name: 'bilde',
         title: 'profilbilde',
         type: 'image',

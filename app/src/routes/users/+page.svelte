@@ -1,5 +1,44 @@
 <script>
-    import Header from "../header.svelte"
+    import { createClient } from "@sanity/client";
+    import Header from "../header.svelte";
+
+    console.log("script starter");
+
+    const client = createClient({
+        projectId: "xprczpyr",
+        dataset: "production",
+        apiVersion: "2021-10-21",
+        useCdn: false
+    });
+
+
+
+    // @ts-ignore
+    export async function loadKaffeliste() {
+
+        console.log("inni load");
+        const data = await client.fetch(`*[_type == "brukere"]`);
+
+        console.log("data i load", data);
+
+        if (data) {
+            brukere = data;
+            return brukere;
+        }
+        return {
+            status: 500,
+            body: new Error("Internal Server Error")
+        };
+    }
+
+    
+
+    
+
+    /**
+   * @type {any[]}
+   */
+    export let brukere = [];
 
     let data = [
         {b: 'anne', p:'123'},
@@ -10,6 +49,8 @@
         {b: 'anne5', p:'123'}
         
     ]
+
+    console.log(loadKaffeliste())
 </script>
 
 <body>
