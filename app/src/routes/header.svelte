@@ -17,7 +17,7 @@
         <div>/</div>
         <a class="link" href="/policies">Our policies</a>
         <div>/</div>
-        <a class="link" href="/logInn">Log inn</a>
+        <a class="link" href="/logInn">Logg inn</a>
     </div>
       
 </header>
@@ -79,6 +79,10 @@
     .link{
         text-decoration: none;
         color: #FFFFFF;
+    }
+
+    .link:hover{
+        color: #03E671;
     }
 
     #logo{
