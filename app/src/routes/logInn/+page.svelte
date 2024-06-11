@@ -23,7 +23,7 @@
     <Header></Header>
 
     <div id="conteiner">
-        <h1>Logg inn</h1>
+        <h1>Log in</h1>
         <div id="boks">
             <h2>Username:</h2>
             <input type="text" bind:value={brukernavn}>

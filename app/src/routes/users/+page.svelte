@@ -1,8 +1,8 @@
 <script>
     import { createClient } from "@sanity/client";
     import Header from "../header.svelte";
+    import imageUrlBuilder from "@sanity/image-url";
 
-    console.log("script starter");
 
     const client = createClient({
         projectId: "xprczpyr",
@@ -11,10 +11,19 @@
         useCdn: false
     });
 
+    const builder = imageUrlBuilder(client)
+    
+    /**
+   * @param {import("@sanity/image-url/lib/types/types").SanityImageSource} source
+   */
+    export function urlFor(source) {
+        return builder.image(source)
+    }
+
 
 
     // @ts-ignore
-    export async function loadKaffeliste() {
+    export async function loadbrukere() {
 
         console.log("inni load");
         const data = await client.fetch(`*[_type == "brukere"]`);
@@ -40,17 +49,9 @@
    */
     export let brukere = [];
 
-    let data = [
-        {b: 'anne', p:'123'},
-        {b: 'anne1', p:'123'},
-        {b: 'anne2', p:'123'},
-        {b: 'anne3', p:'123'},
-        {b: 'anne4', p:'123'},
-        {b: 'anne5', p:'123'}
-        
-    ]
 
-    console.log(loadKaffeliste())
+
+    loadbrukere()
 </script>
 
 <body>
@@ -60,12 +61,12 @@
         <h1>Users</h1>
         <h3>her is a list of the users in the company</h3>
 
-        {#each data as user }
+        {#each brukere as user }
             <div id="userbox">
-                <img id="profilbilde" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
+                <img id="profilbilde" src={urlFor(user.bilde).url()} alt="" >
                 <div id="tekst">
-                    <h4>Username: {user.b}</h4>
-                    <h4>Encrypted password: {user.p}</h4>
+                    <h4>Username: {user.brukernavn}</h4>
+                    <h4>Encrypted password: {user.krypterpassord}</h4>
                 </div>
             </div>
         {/each}
@@ -105,7 +106,7 @@
     }
 
     #userbox{
-        height: 5vw;
+        height: 7vw;
         width: 87vw;
         background-color: #fff;
         border-radius: 1vw;

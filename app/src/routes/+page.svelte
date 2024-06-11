@@ -1,6 +1,5 @@
 <script>
     import Header from '../routes/header.svelte';
-    import Bilde from '../../static/låsbilde.png';
 </script>
 
 <body>
@@ -11,14 +10,14 @@
             <div id="inhold">
                 <h1>Try to hack us</h1>
                 <div id="tekst">
-                    To get the flag you need to log inn as administrator
+                    To get the flag you need to log in as administrator
                     to the company. Se if you can find out who the admin
                     is and what their password is? Try navigating around 
                     the website and gather information. 
                 </div>
                 <div id="tekst" class="goodluck">Good luck🍀</div>
             </div>  
-            <enhanced:img src={Bilde} alt="bilde av lås" id="bilde" />
+            
         </div>
 
        
@@ -77,10 +76,7 @@
         margin-top: 4vw;
     }
 
-    #bilde{
-        width: 40vw;
-        height: 40vw;
-    }
+    
 
 
 </style>

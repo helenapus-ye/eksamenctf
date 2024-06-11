@@ -17,7 +17,7 @@
         <div>/</div>
         <a class="link" href="/policies">Our policies</a>
         <div>/</div>
-        <a class="link" href="/logInn">Logg inn</a>
+        <a class="link" href="/logInn">Log in</a>
     </div>
       
 </header>
