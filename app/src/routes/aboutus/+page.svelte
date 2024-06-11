@@ -87,7 +87,7 @@
 
     <section id="read-more">
         <h2>Read more</h2>
-        <p>If you are looking for more information about our team, look in the files below. Somewhere in this files you can find a folder named employees, where you can find every employee and information about them and their position in the company. The files is quite messy and it can be hard to find information you’re looking for.</p>
+        <p>For more infromastion download the company files</p>
         <a href="SecureTechSolutions.zip" class="download-button" download="/SecureTechSolutions.zip">Download company files</a>
     </section>
   </div>

@@ -5,17 +5,7 @@
     let brukernavn = ""
     let feilmelding = "    "
     function loginn(){
-        fetch('/Yolo' + brukernavn + passord + ".txt")
-        .then(function (h) {
-            console.log("FIKK SVAR", h);
-            if (h.ok){
-              //  location.href = h.url;
-                 h.text().then(function(txt) {feilmelding = txt})
-            }
-            else{
-                feilmelding = "Wrong username or password"
-            }  
-        });
+        console.log('skal logge inn')
     }
 </script>
 

@@ -60,6 +60,10 @@
             <p>To ensure our security measures meet industry standards, we regularly undergo independent security audits and compliance assessments. We are committed to maintaining compliance with relevant regulations and standards, such as GDPR, HIPAA, and ISO/IEC 27001.</p>
             <p>By implementing these comprehensive security measures, SecureTech Solutions ensures that our clients’ data is protected against unauthorized access and cyber threats. Our commitment to security is unwavering, and we continuously strive to enhance our practices to stay ahead of emerging threats.</p>
         </section>
+        <section id="compliance" class="section-content">
+            <h2>User Data</h2>
+            <p>At our company, we securely store user information in our Sanity database. This includes personal details, activity logs, and the positions users hold within the company. Our centralized system ensures robust data management, enhancing both operational efficiency and data security. Your information is handled with the highest standards of privacy and protection.</p>
+        </section>
     </div>
     </div>
 </body>
