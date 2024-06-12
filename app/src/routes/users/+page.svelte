@@ -3,6 +3,7 @@
     import { createClient } from "@sanity/client";
     import Header from "../header.svelte";
     import imageUrlBuilder from "@sanity/image-url";
+    
 
     const client = createClient({
         projectId: "xprczpyr",
@@ -40,9 +41,29 @@
    * @type {any[]}
    */
     export let brukere = [];
+    
 
 
     loadbrukere()
+    
+    let brukereSomHvises = brukere
+
+    let search = ''
+
+    function runSearch(){
+        console.log(search)
+        let i = 0
+        brukereSomHvises = []
+
+        while (i < brukere.length) {
+            if (brukere[i].brukernavn.includes(search)){
+                brukereSomHvises.push(brukere[i])
+            }
+            i++;
+        }
+
+        console.log(brukereSomHvises)
+    }
 
 
     
@@ -54,6 +75,9 @@
     <div id="innhold">
         <h1>Users</h1>
         <h3>her is a list of the users in the company</h3>
+
+        <input type="text" name="Search Users" id="input"  bind:value={search} on:change={runSearch}>
+        <button>Search</button>
 
         {#each brukere as user }
             <div id="userbox">
