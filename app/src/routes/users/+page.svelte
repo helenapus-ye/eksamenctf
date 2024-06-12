@@ -22,9 +22,9 @@
 
     // @ts-ignore
     export async function loadbrukere() {
-        console.log("inni load");
+        
         const data = await client.fetch(`*[_type == "brukere"]`);
-        console.log("data i load", data);
+       
         if (data) {
             brukere = data;
             return brukere;
